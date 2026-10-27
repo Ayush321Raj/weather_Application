@@ -1,0 +1,44 @@
+{
+  "Puducherry": {
+    "temperature": 29,
+    "condition": "Partly Cloudy",
+    "humidity": 78,
+    "windSpeed": 14
+  },
+  "Chennai": {
+    "temperature": 32,
+    "condition": "Sunny",
+    "humidity": 65,
+    "windSpeed": 18
+  },
+  "Delhi": {
+    "temperature": 34,
+    "condition": "Clear",
+    "humidity": 45,
+    "windSpeed": 10
+  },
+  "Mumbai": {
+    "temperature": 30,
+    "condition": "Cloudy",
+    "humidity": 72,
+    "windSpeed": 16
+  },
+  "Bengaluru": {
+    "temperature": 24,
+    "condition": "Rainy",
+    "humidity": 82,
+    "windSpeed": 12
+  },
+  "Kolkata": {
+    "temperature": 31,
+    "condition": "Partly Cloudy",
+    "humidity": 75,
+    "windSpeed": 15
+  },
+  "Hyderabad": {
+    "temperature": 33,
+    "condition": "Sunny",
+    "humidity": 55,
+    "windSpeed": 11
+  }
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Information | AJAX & JSON Application</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts for modern typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header Section -->
+    <header class="app-header">
+      <div class="header-badge">IWT Lab Experiment</div>
+      <h1 id="mainTitle">Weather Information</h1>
+      <p class="subtitle">AJAX + JSON Weather Application</p>
+    </header>
+
+    <!-- Main Card Container -->
+    <main class="card">
+      <!-- Search Form Section -->
+      <section class="search-section" aria-label="City Search">
+        <form id="weatherForm" onsubmit="return false;">
+          <label for="cityInput" class="search-label">Enter City:</label>
+          <div class="input-group">
+            <input 
+              type="text" 
+              id="cityInput" 
+              placeholder="Enter city name, e.g. Puducherry" 
+              autocomplete="off"
+              required
+            >
+            <button type="button" id="getWeatherBtn">Get Weather</button>
+          </div>
+        </form>
+
+        <!-- Quick selection pills for easy lab evaluator demonstration -->
+        <div class="sample-cities">
+          <span class="sample-label">Try sample cities:</span>
+          <button type="button" class="city-chip" data-city="Puducherry">Puducherry</button>
+          <button type="button" class="city-chip" data-city="Chennai">Chennai</button>
+          <button type="button" class="city-chip" data-city="Delhi">Delhi</button>
+          <button type="button" class="city-chip" data-city="Mumbai">Mumbai</button>
+        </div>
+      </section>
+
+      <!-- Status Messages Area -->
+      <section class="status-area" aria-live="polite">
+        <!-- Loading State Indicator -->
+        <div id="loadingMessage" class="status-message loading hidden">
+          <span class="spinner" aria-hidden="true"></span>
+          <span id="loadingText">Fetching weather data...</span>
+        </div>
+
+        <!-- Feedback & Error Message Alert -->
+        <div id="statusMessage" class="status-message alert hidden" role="alert"></div>
+      </section>
+
+      <!-- Weather Display Section -->
+      <section id="weatherDisplay" class="weather-display hidden" aria-label="Weather Details">
+        <div class="weather-summary">
+          <div id="weatherIcon" class="weather-icon" aria-hidden="true">☀️</div>
+          <div class="temp-condition">
+            <h2 id="cityName" class="city-name">Puducherry</h2>
+            <div id="temperature" class="temperature">29°C</div>
+            <div id="weatherCondition" class="condition">Partly Cloudy</div>
+          </div>
+        </div>
+
+        <!-- Weather Metrics Details -->
+        <div class="weather-details-grid">
+          <div class="detail-card">
+            <span class="detail-icon" aria-hidden="true">💧</span>
+            <div class="detail-info">
+              <span class="detail-title">Humidity</span>
+              <span id="humidity" class="detail-value">Humidity: 78%</span>
+            </div>
+          </div>
+
+          <div class="detail-card">
+            <span class="detail-icon" aria-hidden="true">💨</span>
+            <div class="detail-info">
+              <span class="detail-title">Wind Speed</span>
+              <span id="windSpeed" class="detail-value">Wind Speed: 14 km/h</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Empty / Welcome Prompt Area (shown on initial load) -->
+      <div id="initialState" class="initial-state">
+        <div class="initial-icon">🌤️</div>
+        <p>Type a city name above or pick a sample city to fetch real-time data asynchronously using AJAX.</p>
+      </div>
+    </main>
+
+    <!-- Technical Architecture Footer -->
+    <footer class="app-footer">
+      <div class="tech-pipeline">
+        <span class="step-pill">User Input</span>
+        <span class="arrow">&rarr;</span>
+        <span class="step-pill">JavaScript fetch()</span>
+        <span class="arrow">&rarr;</span>
+        <span class="step-pill">JSON Response</span>
+        <span class="arrow">&rarr;</span>
+        <span class="step-pill">DOM Update</span>
+      </div>
+      <p class="footer-note">Demonstrating Asynchronous JavaScript (AJAX) + JSON + DOM Manipulation &bull; No Page Reload</p>
+    </footer>
+  </div>
+
+  <!-- Application Script -->
+  <script src="script.js"></script>
+</body>
+</html>
